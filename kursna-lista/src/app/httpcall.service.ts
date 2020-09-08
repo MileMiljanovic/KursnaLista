@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { environment } from '../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -15,6 +16,6 @@ export class HttpcallService {
         'Content-Type':  'application/json'
       })
     };
-    return this.http.get<any>('https://raifftestapi.getsandbox.com/getCurrencies', httpOptions);
+    return this.http.get<any>(environment.nbsEndpoint, httpOptions);
   }
 }
