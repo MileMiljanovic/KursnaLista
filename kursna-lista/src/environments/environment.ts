@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  nbsEndpoint: 'https://raifftestapi.getsandbox.com/getCurrencies'
+  nbsEndpoint: 'http://localhost:8080/getCurrency'
 };
 
 /*

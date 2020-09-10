@@ -27,7 +27,7 @@ export class ListaComponent implements OnInit {
     this.spinner.show();
     this.httpService.callList().subscribe(
       (data) => {
-        this.listData = data;
+        this.listData = data.currencies;
         this.rendered = true;
         this.spinner.hide();
       },
