@@ -1,6 +1,8 @@
 package com.devoteam.kursna.lista;
 
 import java.nio.charset.Charset;
+import java.security.KeyManagementException;
+import java.security.NoSuchAlgorithmException;
 
 import org.apache.tomcat.util.codec.binary.Base64;
 import org.springframework.http.HttpEntity;
@@ -17,7 +19,7 @@ public class RestClient {
 	private HttpHeaders headers;
 	private HttpStatus status;
 	
-	public RestClient() {
+	public RestClient() throws KeyManagementException, NoSuchAlgorithmException {
 	    this.rest = new RestTemplate();
 	    this.headers = new HttpHeaders();
 	    String auth = "5301db3f" + ":" + "7fb3211eddbed9b364310074c9c755e1";
@@ -27,6 +29,7 @@ public class RestClient {
 	    headers.add("Content-Type", "application/json");
 	    headers.add("Accept", "*/*");
 	    headers.add("Authorization", authHeader);
+	    SSLUtil.turnOffSslChecking();
 	}
 	
 	public Currencies get(String uri) {
