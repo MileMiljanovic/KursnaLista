@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  nbsEndpoint: 'http://localhost:8080/getCurrency'
+  nbsEndpoint: 'http://kursnalista-kursna-lista.apps.eci.peci.pec/getCurrency'
 };
 
 /*
